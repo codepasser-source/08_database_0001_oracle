@@ -1,0 +1,5 @@
+oracle11g有个很恶心的默认属性，用exp导dmp文件，空表导不出来的，所以这次导的dmp文件有很多空表都没有。
+修改下这个属性，但也只是修改后新建的表才会导出来
+alter system set deferred_segment_creation=false;
+ 
+用expdp可以将所有的都导出来，或者用pl/sql developer将所有的数据对象导出来，等你有空再弄吧

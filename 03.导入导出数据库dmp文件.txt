@@ -1,0 +1,8 @@
+exp tpsc/tpscpw123@tpes file=tpsc_tb.dmp log=tpsc_tb_exp.log
+exp tpsc_test/tpsc_test@10.4.237.4 file=cx_quote_city.dmp log=exp.log tables=(cx_quote_city)
+
+imp tpsc/tpscpw123@tpes file=tpsc_tb.dmp log=tpsc_tb_imp.log full=y
+
+imp tpsc_test/tpsc_test@ORCL_10_4_237_2 file=tpsc_tb.dmp log=tpsc_tb_imp.log full=y
+
+

@@ -1,0 +1,38 @@
+-- 创建表空间
+CREATE TABLESPACE TPSC DATAFILE '/usr/local/oracle/oradata/orcl/TPSC.DBF' SIZE 1000M AUTOEXTEND ON MAXSIZE 4000M EXTENT MANAGEMENT LOCAL UNIFORM SIZE 64K;
+-- 删除表空间
+drop tablespace TPSC including contents and datafiles;
+--*******************************************
+
+-- 创建普通用户
+create user dber identified by dber_pw default tablespace TPSC temporary tablespace TEMP profile DEFAULT password expire;
+
+-- Grant/Revoke role privileges 
+grant connect to dber;
+grant resource to dber;
+-- Grant/Revoke system privileges 
+grant unlimited tablespace to dber;
+
+--*******************************************
+
+--创建dba
+create user dbmanager identified by dbmanager_pw default tablespace MATTDAMON temporary tablespace TEMP profile DEFAULT password expire;
+-- Grant/Revoke role privileges 
+grant connect to dbmanager;
+grant resource to dbmanager;
+grant dba to dbmanager;
+
+--*******************************************
+
+--查看用户角色及权限
+select * from dba_role_privs r where r.grantee = 'DBER';
+select * from dba_role_privs r where r.grantee = 'DBMANAGER';
+select * from user_role_privs r where r.username = 'DBER';
+select * from user_role_privs r where r.username = 'DBMANAGER';
+
+--查看超级管理员用户
+select * from V$PWFILE_USERS;
+--查看自身拥有的权限
+select * from session_privs; 
+--*******************************************
+

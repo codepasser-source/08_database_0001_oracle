@@ -1,0 +1,29 @@
+[GENERAL]
+
+RESPONSEFILE_VERSION = "11.2.0"
+
+OPERATION_TYPE = "createDatabase"
+
+[CREATEDATABASE]
+
+GDBNAME = "orcl"
+
+SID = "orcl"
+
+TEMPLATENAME = "General_Purpose.dbc"
+
+SYSPASSWORD = "Sa*963.-+"
+
+SYSTEMPASSWORD = "Sa*963.-+"
+
+SYSMANPASSWORD = "Sa*963.-+"
+
+DBSNMPPASSWORD = "Sa*963.-+"
+
+DATAFILEDESTINATION = "/usr/local/oracle/oradata"
+
+RECOVERYAREADESTINATION= "/usr/local/oracle/flash_recovery_area"
+
+CHARACTERSET = "AL32UTF8"
+
+NATIONALCHARACTERSET= "UTF8"

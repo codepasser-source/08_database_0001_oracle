@@ -1,0 +1,21 @@
+步骤：
+1、先新建一个用户，用户名和密码你自己定义吧，然后发信告诉我们，其他人就不要告诉了，
+给这个新用户dba权限。
+grant dba to ***;
+ 
+2、用新建的用户登录执行下面的操作
+ 
+--收回tesc_test的dba权限
+revoke dba from tpsc_test;
+ 
+--执行附件的脚本创建触发器，这个触发器就是控制删除和修改表权限的。
+ 
+这样以后修改和删除tpsc_test的表都需要用新建的用户来操作
+或者先把触发器失效，操作完成后，再让触发器有效。
+ 
+--使触发器失效
+alter trigger tpsc_test.tri_ddl disable;
+--使触发器有效
+alter trigger tpsc_test.tri_ddl enable;
+ 
+3、触发器创建后，在tpsc_test用户下创建个表，然后再删除，试试好用不。

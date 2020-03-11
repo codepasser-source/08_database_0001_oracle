@@ -1,0 +1,15 @@
+sqlplus /nolog
+ 
+connect /as sysdba
+ 
+shut immediate;
+ 
+startup;
+
+=====
+
+sqlplus sys/Sa*963.-+ as sysdba
+
+或者 
+sqlplus /nolog
+connect  sys as sysdba

@@ -1,0 +1,1 @@
+C:\app\Administrator\product\11.2.0\dbhome_2\BIN\exp.exe tpsc_test/tpsc_test@uat.tplife.com file=D:\数据库自动备份\uat_tpsc_test_%date:~8,2%_bak.dmp
